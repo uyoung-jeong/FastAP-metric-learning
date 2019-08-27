@@ -13,11 +13,13 @@
   * [ResNet-50](http://www.vlfeat.org/matconvnet/models/imagenet-resnet-50-dag.mat): download to `./cachedir/models/imagenet-resnet-50-dag.mat`
 
 ### Usage
-We provide a unified interface `run_demo.m` to run all experiments conducted in the paper. The general syntax is 
+We provide a unified interface `run_demo.m` to run all experiments conducted in the paper. The general syntax is
 ```
 run_demo([dataset], [key-value pairs])
 ```
-where 
+For example,
+`run_demo('inshop', struct('arch', 'resnet18'))`
+where
 * `dataset` is one of `'products', 'inshop', 'vid'`
 * Various parameters are specified as key-value pairs. The full list can be found by inspecting `get_opts.m`. Some notable ones are:
   * `'gpus'` (int) 1-based GPU index. Current implementation only supports 1 GPU.
